@@ -16,8 +16,6 @@ function LunchCheckController($scope) {
         	$scope.noticeType 	= "danger";
 		}else{
 			var arrayFood 	=$scope.foodItems.split(',');
-			var bar = array_filter(arrayFood, 'is_empty');
-			console.log(bar);
 			var length		=arrayFood.length;
 			if (length<=3 ){
 				$scope.message		='Enjoy!';
