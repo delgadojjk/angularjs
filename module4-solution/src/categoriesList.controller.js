@@ -8,7 +8,7 @@
 	function CategoriesListController(items) {
 		var categoriesList= this;
 		//console.log("items entro " + JSON.stringify(items.data));
-		categoriesList.items= items.data;		
+		categoriesList.items= items;		
 	}
 
 })();
