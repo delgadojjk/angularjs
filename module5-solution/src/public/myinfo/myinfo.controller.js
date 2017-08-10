@@ -2,15 +2,23 @@
 	'use strict';
 
 	angular.module('public')
-	
+
 	.controller('MyInfoController',MyInfoController);
 
-	MyInfoController.$inject=['userInfo'];
+	MyInfoController.$inject=['userInfo', 'MenuService'];
 
-	function MyInfoController(userInfo) {
+	function MyInfoController(userInfo,MenuService) {
 		var ctrl=this;
-		ctrl.userInfo=userInfo;
-		console.log(userInfo);
+		if (userInfo){
+			 MenuService.getMenuItem(userInfo.favoriteDish)
+      			.then(function(response) {
+        		ctrl.menuItem = response;
+      		})
+
+      		ctrl.userInfo=userInfo;
+		}
+		
+		
 	}
 
 })();
